@@ -2,7 +2,7 @@
   "name": "javascriptstudy",
   "version": "1.0.0",
   "description": "",
-  "main": "基础知识.js",
+  "main": "src/js/基础知识.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
