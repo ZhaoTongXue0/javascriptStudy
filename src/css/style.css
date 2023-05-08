@@ -1,29 +1,37 @@
-.box {
-  width: 250px;
-  height: 200px;
-  display: inline-block;
-  color: #fff;
-  background-color: indigo;
-  vertical-align: middle;
+* {
+    margin: 0;
+    padding: 0;
 }
-table tr td {
-  border: 1px black solid;
-  width: 200px;
-  height: 50px;
-  vertical-align: middle;
-  background-color: seagreen;
+
+div {
+    width: 300px;
+    height: 300px;
+    border: 2px solid red;
 }
-.box1 {
-  width: 200px;
-  height: 200px;
-  background-color: seagreen;
+
+.title {
+    float: left;
 }
-.box1 .box2 {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  background-color: sandybrown;
-  color: #fff;
-  font-size: 22px;
+
+.date {
+    float: right;
 }
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    /*
+              li是没有高度的
+              但是它的儿子有设置浮动的效果
+              给父亲li设置overflow:hidden;属性
+              之后，父亲li就能被儿子撑出高度。
+              浏览器偏方。没有解释
+          */
+    overflow: hidden;
+    background-color: pink;
+    margin-bottom: 8px;
+}
+
 /*# sourceMappingURL=style.css.map */
