@@ -2,7 +2,7 @@
   "name": "javascriptstudy",
   "version": "1.0.0",
   "description": "",
-  "main": "src/js/基础知识.js",
+  "main": "src/js/闭包.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +12,5 @@
   "devDependencies": {
     "less": "^4.1.3",
     "less-loader": "^11.1.0"
-  },
-  "dependencies": {
-    "node-sass": "^8.0.0",
-    "sass": "^1.62.1"
   }
 }
