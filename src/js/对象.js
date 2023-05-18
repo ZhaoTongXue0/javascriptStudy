@@ -167,10 +167,81 @@ function shallowCopyTwo() {
 
     obj1.info.desc = '永不止步'; // 由于 Object.assign() 只是浅拷贝，所以当修改 obj1 的第二层数据时，obj2 对应的值也会被改变。
     console.log('obj2:' + JSON.stringify(obj2));
+
+    //浅拷贝写法一：
+    const obj3 = {};
+    Object.assign(obj3, obj1);
+    //浅拷贝写法二：
+    const obj4 = Object.assign({}, obj1);
+    //浅拷贝写法三：
+    const obj5 = {};
+    const obj6 = Object.assign(obj5, obj1);
+
+    console.log(obj3);
+    console.log(obj4);
+    console.log(obj5);
+    console.log(obj6);
+
+    //将 obj1 的值追加到 obj2 中。如果两个对象里的属性名相同，则 obj2 中的值会被 obj1 中的值覆盖。
+    let myObj1 = {
+        name: "赵乾雨",
+        age: "18",
+        gender: "男"
+    }
+    let myObj2 = {
+        name: "张三",
+        age: "22",
+        gender: "女",
+        other: "111"
+    }
+    console.log(myObj1);
+    console.log(myObj2);
+    Object.assign(myObj1, myObj2);
+    console.log(myObj1);
+}
+
+function DeepCopy() {
+    //深拷贝其实就是将浅拷贝进行递归。
+    //使用for in 递归实现
+    let obj1 = {
+        name: 'qianguyihao',
+        age: 28,
+        info: {
+            desc: 'hello',
+        },
+        color: ['red', 'blue', 'green'],
+    };
+    let obj2 = {};
+
+    deepCopy(obj2, obj1);
+    obj1.info.desc = 'github';
+    console.log(obj1);
+    console.log(obj2);
+
+// 方法：深拷贝
+    function deepCopy(newObj, oldObj) {
+        for (let oldObjKey in oldObj) {
+            // 获取属性值 oldObj[key]
+            let item = oldObj[oldObjKey];
+            // 判断这个值是否是数组
+            if (item instanceof Array) {
+                newObj[oldObjKey] = [];
+                deepCopy(newObj[oldObjKey], item);
+            } else if (item instanceof Object) {
+                // 判断这个值是否是对象
+                newObj[oldObjKey] = {};
+                deepCopy(newObj[oldObjKey], item);
+            } else {
+                // 简单数据类型，直接赋值
+                newObj[oldObjKey] = item;
+            }
+        }
+    }
 }
 
 // basicContentOperationsOnObjects();
 // theOperatorOfTheObject();
 // createCustomObjectContent();
-shallowCopyOne();
-shallowCopyTwo();
+// shallowCopyOne();
+// shallowCopyTwo();
+DeepCopy();
