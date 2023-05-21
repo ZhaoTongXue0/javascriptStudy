@@ -1,4 +1,4 @@
-#box{
+#box {
     display: inline-block;
     width: 200px;
     height: 50px;
@@ -7,28 +7,50 @@
     text-align: center;
     line-height: 50px;
 }
+#box3{
+    width: 100px;
+    height: 50px;
+    background-color: green;
+    margin-top: 10px;
+}
 
-#div1{
-    margin-top: 50px;
+#div1 {
+    margin-top: 200px;
     width: 100px;
     height: 100px;
     background-color: red;
 }
-#displayButton{
+#displayButton {
     margin-top: 20px;
-    .title{
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 30px;
+
+    .title {
         display: inline-block;
         width: 100px;
-        height: 50px;
-        border: 1px solid black;
-        border-radius: 30px;
         line-height: 50px;
         text-align: center;
+        text-decoration: none;
+        color: black;
+    }
+
+    &:hover {
+        background-color: dodgerblue;
+        transition: 0.3s;
+        border-color: dodgerblue;
+        .title{
+            color: #fff;
+            transition: 0.3s;
+        }
     }
 }
-#hiddenContent{
+
+#hiddenContent {
     display: inline-block;
-    p{
+
+    p {
         width: 500px;
         text-align: justify;
     }

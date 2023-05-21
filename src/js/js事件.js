@@ -24,7 +24,7 @@ function fn() {
 let div1 = document.getElementById("div1");
 div1.onmouseover = function () {
     div1.style.width = "200px";
-    div1.style.height = "100px";
+    div1.style.height = "150px";
     div1.style.backgroundColor = "blue";
     div1.style.transition = "0.3s";
 }
@@ -45,3 +45,36 @@ hideButton.onclick = function () {
     }
 }
 
+//创建节点
+let a1 = document.createElement("div");
+let b1 = document.createElement("li");
+console.log(a1);
+
+//插入节点
+//方式一：
+//父节点.appendChild(新的子节点);
+//父节点的最后插入一个新的子节点。
+let box3 = document.getElementById("box");
+box3.appendChild(a1);
+a1.id = "box3";
+
+//方式二：
+//父节点.insertBefore(新的子节点,作为参考的子节点)
+//在参考节点前插入一个新的节点。
+box3.insertBefore(b1, a1); //将b1标签放到a1标签前面
+
+//删除节点
+//父节点.removeChild(子节点)
+let box21 = document.getElementById("box2");
+box3.removeChild(box21);
+
+//复制节点
+//要复制的节点.cloneNode();
+//括号里可以写参数：true ; 写了true表示即复制节点本身，也复制节点子内容
+//参数false，写与不写效果一样。只复制本节点
+let box30 = document.getElementById("box3");
+let theInsertedNode = box30.cloneNode(false);
+box3.appendChild(theInsertedNode);
+
+//删除节点的属性 delete the properties of the node
+//元素节点.removeAttribute(属性名);
