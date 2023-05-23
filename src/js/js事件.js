@@ -24,15 +24,16 @@ function fn() {
 let div1 = document.getElementById("div1");
 div1.onmouseover = function () {
     div1.style.width = "200px";
-    div1.style.height = "150px";
+    div1.style["height"] = "200px";
     div1.style.backgroundColor = "blue";
     div1.style.transition = "0.3s";
 }
 div1.onmouseout = function () {
-    div1.style.width = "100px";
-    div1.style.height = "100px";
-    div1.style.backgroundColor = "red";
-    div1.style.transition = "0.3s";
+    // div1.style.width = "100px";
+    // div1.style.height = "100px";
+    // div1.style.backgroundColor = "red";
+    // div1.style.transition = "0.3s";
+    div1.style.cssText = "width:150px; height:150px; background-color:red; transition:0.3s;";
 }
 
 let hideButton = document.getElementById("displayButton");
