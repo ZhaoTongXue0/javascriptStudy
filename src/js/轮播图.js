@@ -5,7 +5,7 @@
 
 window.onload = function () {
     //1.获取事件源及相关元素。（老三步）
-    let all = document.getElementById("all");
+    // let all = document.getElementById("all");
 
     //2.复制第一张图片所在的li,添加到ul的最后面。
     //3.给ol中添加li，ul中的个数-1个，并点亮第一个按钮。
