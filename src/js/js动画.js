@@ -4,7 +4,7 @@
 // 动画(闪现/匀速/缓动)
 // 冒泡/兼容/封装
 
-//offset系列介绍
+//offset系列
 let offsetSeries = function () {
     // offset系列 ： 主要功能：偏移，补偿，位移
     // 获取元素尺寸
@@ -29,3 +29,8 @@ let offsetSeries = function () {
     console.log(box2.style.left);
 }
 
+//scroll系列
+// window.onscroll方法 做滚动监听，可以使用
+window.onscroll = function (){
+    console.log(1);
+}
