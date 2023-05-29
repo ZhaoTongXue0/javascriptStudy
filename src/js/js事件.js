@@ -39,6 +39,19 @@ div1.onmouseout = function () {
 let hideButton = document.getElementById("displayButton");
 let hiddenContent = document.getElementById("hiddenContent");
 hideButton.onclick = function () {
+    event = event || window.event;
+    console.log(event);
+    console.log(event.timeStamp);
+    console.log(event.bubbles);
+    console.log(event.button);
+    console.log(event.pageX);
+    console.log(event.pageY);
+    console.log(event.screenX);
+    console.log(event.screenY);
+    console.log(event.target);
+    console.log(event.type);
+    console.log(event.clientX);
+    console.log(event.clientY);
     if (hiddenContent.style.display === "inline-block") {
         hiddenContent.style.display = "none";
     } else {
@@ -79,3 +92,39 @@ box3.appendChild(theInsertedNode);
 
 //删除节点的属性 delete the properties of the node
 //元素节点.removeAttribute(属性名);
+
+//事件绑定
+let btn = document.getElementsByTagName("button")[0];
+// addEventListener: 事件监听器。 原事件被执行的时候，后面绑定的事件照样被执行
+// 这种写法不存在响应函数被覆盖的情况。（更适合团队开发）
+btn.addEventListener("click", fn1);
+btn.addEventListener("click", function () {
+    console.log("事件2");
+}, false);
+
+function fn1() {
+    console.log("事件1");
+}
+
+let btn2 = document.getElementById("btn2");
+myBind(btn2, "click", function () {
+    console.log("哈哈哈");
+});
+
+// div跟随移动
+window.onload = function () {
+    let divMove = document.getElementById("eventMovement");
+    document.onmouseover = function (event) {
+        //兼容的方式获取event对象
+        event = event || window.event;
+        // 鼠标在页面的位置 = 滚动条滚动的距离 + 可视区域的坐标。
+        let pageX = event.pageX || scroll().left + event.clientX;
+        let pageY = event.pageY || scroll().right + event.clientY;
+
+        //   设置div的偏移量（相对于整个页面）
+        // 注意，如果想通过 style.left 来设置属性，一定要给 box1开启绝对定位。
+        divMove.style.top = pageX + "px";
+        divMove.style.left = pageY + "px";
+    }
+}
+

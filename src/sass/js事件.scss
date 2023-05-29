@@ -55,3 +55,10 @@
         text-align: justify;
     }
 }
+#eventMovement{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    //要使用绝对定位
+    position: absolute;
+}

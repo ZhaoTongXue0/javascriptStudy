@@ -2,8 +2,8 @@
 //  返回值为 一个对象。以后就直接调用scroll().top 和 scroll().left就好。
 function scroll() {
     return { //此函数的返回值是对象
-        top: window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,
-        left: window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft
+        left: window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,
+        right: window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft
     }
 }
 
@@ -28,4 +28,30 @@ function client() {
             "height": document.body.clientHeight
         }
     }
+}
+
+// 事件绑定DOM2写法，兼容IE 和 高版本浏览器
+function myBind(element, eventStr, callback) {
+    if (element.addEventListener) {
+        //大部分浏览器兼容的方式
+        element.addEventListener(eventStr, callback, false);
+    } else {
+        /*
+         * this是谁，由调用方式决定
+         * callback.call(element)
+         */
+        //IE8及以下
+        element.attachEvent("on" + eventStr, function () {
+            //在匿名函数 function 中调用回调函数callback
+            callback.call(element);
+        });
+    }
+}
+
+function show(ele) {
+    ele.style.display = "block";
+}
+
+function hide(ele) {
+    ele.style.display = "none";
 }
