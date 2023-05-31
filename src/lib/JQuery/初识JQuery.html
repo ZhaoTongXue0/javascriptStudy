@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>JQ</title>
+    <style>
+        ul li {
+            list-style: none;
+            width: 100px;
+            height: 20px;
+            background-color: red;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="box"></div>
     <div id="box"></div>
     <div class="box"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
     <script src="../../jq/jquery-3.7.0.min.js"></script>
     <script>
         //jQ入口
@@ -23,8 +42,17 @@
                 "width": "30px",
                 "height": "30px",
                 "background-color": "red",
-                "margin" : "30px",
+                "margin": "30px",
             });
+
+            let jqLi = $("li");
+            for (let i = 0; i < jqLi.length; i++) {
+                if (i % 2 === 0) {
+                    jqLi[i].style.backgroundColor = "pink";
+                } else {
+                    jqLi.get(0).style.backgroundColor = "yellow";
+                }
+            }
         })
         //jQuery 就是把 DOM 对象重新包装了一下，让其具有了 jQuery 方法。
     </script>
