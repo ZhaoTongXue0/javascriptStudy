@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQ</title>
+</head>
+<body>
+    <div class="box"></div>
+    <div id="box"></div>
+    <div class="box"></div>
+    <script src="../../jq/jquery-3.7.0.min.js"></script>
+    <script>
+        //jQ入口
+        //文档加载完毕，图片不加载的时候，就可以执行这个函数。
+        jQuery(document).ready(function () {
+            let jqBox1 = $("#box");
+            let jqBox2 = $(".box");
+            let jqBox3 = $("div");
+            console.log(jqBox1);
+            console.log(jqBox2);
+            console.log(jqBox3);
+            jqBox3.css({
+                "width": "30px",
+                "height": "30px",
+                "background-color": "red",
+                "margin" : "30px",
+            });
+        })
+        //jQuery 就是把 DOM 对象重新包装了一下，让其具有了 jQuery 方法。
+    </script>
+</body>
+</html>
