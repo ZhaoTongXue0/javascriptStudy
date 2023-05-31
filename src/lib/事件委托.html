@@ -13,7 +13,7 @@
                 event = event || window.event;
                 // event.target 表示：触发事件的对象
                 //如果触发事件的对象是我们期望的元素，则执行；否则不执行
-                if (event.target && event.target.className == "link"){
+                if (event.target && event.target.className === "link"){
                     console.log('我是ul的单击响应函数');
                 }
             },false);
@@ -25,10 +25,10 @@
         <li>
             <p>我是p元素</p>
         </li>
-        <li><a href="javascript:;" class="link">超链接一</a></li>
-        <li><a href="javascript:;" class="link">超链接二</a></li>
-        <li><a href="javascript:;" class="link">超链接三</a></li>
-        <li><a href="javascript:;" class="linkA">超链接四</a></li>
+        <li><a href="javascript:" class="link">超链接一</a></li>
+        <li><a href="javascript:" class="link">超链接二</a></li>
+        <li><a href="javascript:" class="link">超链接三</a></li>
+        <li><a href="javascript:" class="linkA">超链接四</a></li>
     </ul>
 </body>
 </html>

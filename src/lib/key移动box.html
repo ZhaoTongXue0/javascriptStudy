@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        document.onkeydown = function () {
+            event = event || window.event;
+
+            //定义一个变量，来表示移动的速度
+            let speed = 10;
+
+            //当用户按了ctrl以后，速度加快
+            if (event.ctrlKey) {
+                console.log('按下 ctrl 键，步数改为20');
+                speed = 20;
+            }
+            /*
+                 * 37 左
+                 * 38 上
+                 * 39 右
+                 * 40 下
+                 */
+            switch (event.keyCode) {
+                case 37:
+                    //alert("向左"); left值减小
+                    box1.style.left = box1.offsetLeft - speed + 'px'; // 在初始值的基础之上，减去 speed 大小
+                    break;
+                case 39:
+                    //alert("向右");
+                    box1.style.left = box1.offsetLeft + speed + 'px';
+                    break;
+                case 38:
+                    //alert("向上");
+                    box1.style.top = box1.offsetTop - speed + 'px';
+                    break;
+                case 40:
+                    //alert("向下");
+                    box1.style.top = box1.offsetTop + speed + 'px';
+                    break;
+            }
+        }
+
+    </script>
+</body>
+</html>
