@@ -111,20 +111,3 @@ myBind(btn2, "click", function () {
     console.log("哈哈哈");
 });
 
-// div跟随移动
-window.onload = function () {
-    let divMove = document.getElementById("eventMovement");
-    document.onmouseover = function (event) {
-        //兼容的方式获取event对象
-        event = event || window.event;
-        // 鼠标在页面的位置 = 滚动条滚动的距离 + 可视区域的坐标。
-        let pageX = event.pageX || scroll().left + event.clientX;
-        let pageY = event.pageY || scroll().right + event.clientY;
-
-        //   设置div的偏移量（相对于整个页面）
-        // 注意，如果想通过 style.left 来设置属性，一定要给 box1开启绝对定位。
-        divMove.style.top = pageX + "px";
-        divMove.style.left = pageY + "px";
-    }
-}
-
