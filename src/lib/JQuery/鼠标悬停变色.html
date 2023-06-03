@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标悬停变色</title>
+</head>
+<body>
+    <ul>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+        <li>生命壹号，永不止步</li>
+    </ul>
+    <script src="../../jq/jquery-3.7.0.min.js"></script>
+    <script>
+        let liOddNumber = $("li:odd");
+        let liEvenNumber = $("li:even");
+        liOddNumber.css("background-color","#cccccc");
+        liEvenNumber.css("background-color","while");
+
+        let color = "";
+        $("li").mouseover(function () {
+            color = $(this).css("background-color");
+            $(this).css("background-color","red");
+        })
+        $("li").mouseout(function () {
+            $(this).css("background-color",color);
+        })
+    </script>
+</body>
+</html>
