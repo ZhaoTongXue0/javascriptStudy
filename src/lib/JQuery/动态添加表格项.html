@@ -72,10 +72,17 @@
             $("#j_btnGetData").click(function () {
                 let str = "";
                 for (let i = 0; i < data.length; i++) {
-                    str += "<tr><td>"+data[i].name+"</td><td>"+data[i].url+"</td><td>"+data[i].type+"</td></tr>"
+                    str += "<tr><td>" + data[i].name + "</td><td>" + data[i].url + "</td><td>" + data[i].type + "</td></tr>"
                 }
                 $("#j_tbData").html(str);
             })
+            for (let i = 0 ; i < data.length ; i++){
+                let {name: myName, url: myUrl, type: myType} = data[i];
+                console.log(myName);
+                console.log(myUrl);
+                console.log(myType);
+            }
+
         })
     </script>
 </body>
